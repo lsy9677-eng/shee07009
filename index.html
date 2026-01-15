@@ -2665,7 +2665,10 @@ const SMS_API_URL = "/api/send-sms";
     const msg = window.generateNotice();
     if(!msg) return;
 
-  
+    const share = await window.buildNoticeUrl(currentStudentId, 'parent');
+
+    // ✅ 디버그 로그는 여기!
+    console.log('카카오 공유 URL:', share.url);
 
     Kakao.Share.sendDefault({
       objectType: 'text',
