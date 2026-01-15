@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -31,6 +31,12 @@
   --brand-yellow:#FACC15;
   --brand-yellow-soft:#FEF9C3;
 
+  --primary: var(--brand-blue);
+  --secondary: var(--brand-yellow);
+  --text-main: var(--ink);
+  --text-sub: var(--ink-sub);
+
+
   --ink:#0F172A;
   --ink-sub:#475569;
 
@@ -50,13 +56,6 @@
   --r-sm: 12px;
 
   --tap: 48px;
-
-
-  /* Added to support existing var(--primary) usage */
-  --primary: var(--brand-blue);
-  --secondary: var(--brand-yellow);
-  --text-main: var(--ink);
-  --text-sub: var(--ink-sub);
 }
 
 *{ box-sizing:border-box; }
@@ -1530,7 +1529,7 @@ body.kiosk-mode .kiosk-exit-btn {
             
             <div class="admin-only" style="display:flex; gap:5px; margin-bottom:20px;">
                 <input type="text" id="newCounsel" placeholder="상담 내용 기록" style="flex:1;">
-                <button onclick="addCounselLog()" style="background:var(--brand-blue);; color:white; border:none; padding:0 20px; border-radius:8px; font-weight:bold;">등록</button>
+                <button onclick="addCounselLog()" style="background:var(--primary); color:white; border:none; padding:0 20px; border-radius:8px; font-weight:bold;">등록</button>
             </div>
 
             <details style="background:white; border:1px solid #e0e0e0; border-radius:10px; padding:10px;">
@@ -2613,8 +2612,8 @@ const SMS_API_URL = "/api/send-sms";
   // =========================================================
   window.__NOTICE_PAGE_NAME__ = 'notice.html';
 
-  // ✅ 카카오 인앱에서도 항상 이 주소(베르셀)를 사용
-  window.PUBLIC_BASE_URL = 'https://shee07009.vercel.app/';
+  // ✅ 배포 주소(카톡 링크 고정)
+  window.PUBLIC_BASE_URL = 'https://shee07009.vercel.app';
 
   // ✅ async로 바꿔야 await 사용 가능
   window.createNoticeToken = async function(studentId, target){
